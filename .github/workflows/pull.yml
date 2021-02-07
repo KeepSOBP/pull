@@ -15,17 +15,8 @@ jobs:
         keep_minimum_runs: 3
 
     - name: NekoInverter-Ehviewer
-      uses: wei/git-sync@v3
-      with:
-        source_repo: "git@gitlab.com:NekoInverter/EhViewer.git"
-        source_branch: "refs/remotes/source/*"
-        destination_repo: "https://KeepSOBP:${{secrets.access_token}}@github.com/KeepSOBP/Ehviewer-NekoInverter-Mirror.git"
-        destination_branch: "refs/heads/*"
+      run: |
+        git clone --bare https://gitlab.com/NekoInverter/EhViewer
+        cd EhViewer
+        git push --force --mirror https://github.com/keepsobp/Ehviewer-NekoInverter-Mirror.git
 
-    - name: NekoInverter-Ehviewer-tag
-      uses: wei/git-sync@v3
-      with:
-        source_repo: "git@gitlab.com:NekoInverter/EhViewer.git"
-        source_branch: "refs/tags/*"
-        destination_repo: "https://KeepSOBP:${{secrets.access_token}}@github.com/KeepSOBP/Ehviewer-NekoInverter-Mirror.git"
-        destination_branch: "refs/tags/*"
