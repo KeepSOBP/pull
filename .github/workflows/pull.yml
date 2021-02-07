@@ -1,4 +1,4 @@
-name: Pull-sync
+name: pull-sync
 on:
   workflow_dispatch:
   schedule:
