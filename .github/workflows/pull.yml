@@ -16,7 +16,7 @@ jobs:
 
     - name: NekoInverter-Ehviewer
       run: |
-        git clone --bare https://gitlab.com/NekoInverter/EhViewer
-        cd EhViewer
+        git clone --bare https://gitlab.com/NekoInverter/EhViewer.git
+        cd EhViewer.git
         git push --force --mirror https://github.com/keepsobp/Ehviewer-NekoInverter-Mirror.git
 
