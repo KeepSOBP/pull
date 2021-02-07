@@ -1,0 +1,31 @@
+name: Pull-sync
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 00 */1 * * *
+  push:
+jobs:
+  autosync:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Delete workflow runs
+      uses: Mattraks/delete-workflow-runs@main
+      with:
+        retain_days: 0.02
+        keep_minimum_runs: 3
+
+    - name: NekoInverter-Ehviewer
+      uses: wei/git-sync@v3
+      with:
+        source_repo: "git@gitlab.com:NekoInverter/EhViewer.git"
+        source_branch: "refs/remotes/source/*"
+        destination_repo: "https://KeepSOBP:${{secrets.access_token}}@github.com/KeepSOBP/Ehviewer-NekoInverter-Mirror.git"
+        destination_branch: "refs/heads/*"
+
+    - name: NekoInverter-Ehviewer-tag
+      uses: wei/git-sync@v3
+      with:
+        source_repo: "git@gitlab.com:NekoInverter/EhViewer.git"
+        source_branch: "refs/tags/*"
+        destination_repo: "https://KeepSOBP:${{secrets.access_token}}@github.com/KeepSOBP/Ehviewer-NekoInverter-Mirror.git"
+        destination_branch: "refs/tags/*"
