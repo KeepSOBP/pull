@@ -30,3 +30,12 @@ jobs:
         source_branch: "master"
         destination_repo: "https://keepsobp:${{ secrets.access_token }}@github.com/keepsobp/e-hentai-view.git"
         destination_branch: "master"
+
+    - name: chimu.moe-i18n
+      uses: wei/git-sync@v3
+      with:
+        source_repo: "Chimu-moe/i18n"
+        source_branch: "main"
+        destination_repo: "https://keepsobp:${{ secrets.access_token }}@github.com/keepsobp/chimu.moe-i18n-kr.git"
+        destination_branch: "main"
+     
