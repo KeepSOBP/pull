@@ -12,7 +12,7 @@ jobs:
       uses: Mattraks/delete-workflow-runs@main
       with:
         retain_days: 0.02
-        keep_minimum_runs: 3
+        keep_minimum_runs: 1
 
     - name: NekoInverter-Ehviewer
       run: |
