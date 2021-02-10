@@ -39,7 +39,7 @@ jobs:
         destination_repo: "https://keepsobp:${{ secrets.access_token }}@github.com/keepsobp/chimu.moe-i18n-kr.git"
         destination_branch: "main"
 
-    - name: chimu.moe-i18n
+    - name: SmartTubeNext
       uses: wei/git-sync@v3
       with:
         source_repo: "yuliskov/SmartTubeNext"
