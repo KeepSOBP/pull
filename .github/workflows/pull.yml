@@ -46,4 +46,11 @@ jobs:
         source_branch: "master"
         destination_repo: "https://keepsobp:${{ secrets.access_token }}@github.com/keepsobp/SmartTubeNext.git"
         destination_branch: "master"
-     
+
+    - name: Gitmoji-kr
+      uses: wei/git-sync@v3
+      with:
+        source_repo: "carloscuesta/gitmoji"
+        source_branch: "master"
+        destination_repo: "https://keepsobp:${{ secrets.access_token }}@github.com/keepsobp/gitmoji-kr.git"
+        destination_branch: "master"
