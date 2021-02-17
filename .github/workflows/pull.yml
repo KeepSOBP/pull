@@ -14,6 +14,8 @@ jobs:
         retain_days: 0.003 # 30min?
         keep_minimum_runs: 1
 
+######################################
+
   autosync:
     runs-on: ubuntu-latest
     steps:
@@ -38,11 +40,3 @@ jobs:
         source_branch: "main"
         destination_repo: "https://keepsobp:${{ secrets.access_token }}@github.com/keepsobp/chimu.moe-i18n-kr.git"
         destination_branch: "main"
-
-    - name: SmartTubeNext
-      uses: wei/git-sync@v3
-      with:
-        source_repo: "yuliskov/SmartTubeNext"
-        source_branch: "master"
-        destination_repo: "https://keepsobp:${{ secrets.access_token }}@github.com/keepsobp/SmartTubeNext.git"
-        destination_branch: "master"
