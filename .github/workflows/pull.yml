@@ -5,18 +5,7 @@ on:
     - cron: "*/10 * * * *" # every 10min
   push:
 jobs:
-  delete-old-workflow-runs:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@main
-      with:
-        retain_days: 0.003 # 30min?
-        keep_minimum_runs: 1
-
-######################################
-
-  autosync:
+  git-pull:
     runs-on: ubuntu-latest
     steps:
     - name: NekoInverter-Ehviewer
